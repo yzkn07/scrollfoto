@@ -17,13 +17,26 @@
    width: 100%;
 }
 .left {
+    color: #636363;
     padding: 10px;
     float: left;
+    text-shadow: 1px 0px 0px black;
+}
+.left:active {
+    color: black;
+    text-shadow: none;
 }
 .right {
+    color: #636363;
     padding: 10px;
     float: right;
+    text-shadow: 1px 0px 0px black;
 }
+.right:active {
+    color: black;
+    text-shadow: none;
+}
+
 .container .gallery {
     z-index: 1;
     display: flex;
@@ -38,7 +51,7 @@
 
 img{
     margin: 5px;
-    width: 50%;
+    width: 200px;
     aspect-ratio: 1 / 1;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 4px;

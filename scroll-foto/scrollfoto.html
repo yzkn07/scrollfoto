@@ -39,11 +39,59 @@
 
         <div class="arrows">
             
-            <a href="#photo-first"><i class="fa-solid fa-circle-arrow-left fa-xl left" style="color: #000000;"></i></a>
-            <a href="#photo-last"><i class="fa-solid fa-circle-arrow-right fa-xl right" style="color: #000000;"></i></a>
+            <i class="fa-solid fa-circle-arrow-left fa-xl left"></i>
+            <i class="fa-solid fa-circle-arrow-right fa-xl right"></i>
             
         </div>
     </div>
 
+    <!-- JavaScript kodları ChatGPT'ye yazdırılmıştır :) -->
+
+    <script>
+        const gallery = document.querySelector('.gallery');
+        const leftArrow = document.querySelector('.left');
+        const rightArrow = document.querySelector('.right');
+      
+        const scrollAmount = 10; // Sarmalama hızı (örneğin 10px)
+      
+        let scrollInterval;
+      
+        function scrollLeft() {
+          gallery.scrollLeft -= scrollAmount;
+          scrollInterval = setTimeout(scrollLeft, 10);
+        }
+      
+        function scrollRight() {
+          gallery.scrollLeft += scrollAmount;
+          scrollInterval = setTimeout(scrollRight, 10);
+        }
+      
+        leftArrow.addEventListener('mousedown', () => {
+          scrollLeft();
+        });
+      
+        rightArrow.addEventListener('mousedown', () => {
+          scrollRight();
+        });
+      
+        leftArrow.addEventListener('mouseup', () => {
+          clearTimeout(scrollInterval);
+        });
+      
+        rightArrow.addEventListener('mouseup', () => {
+          clearTimeout(scrollInterval);
+        });
+      
+        leftArrow.addEventListener('mouseleave', () => {
+          clearTimeout(scrollInterval);
+        });
+      
+        rightArrow.addEventListener('mouseleave', () => {
+          clearTimeout(scrollInterval);
+        });
+      </script>
+      
+      
+      
 </body>
 </html>
